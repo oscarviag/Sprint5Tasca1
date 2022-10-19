@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Afegir nova Sucursal</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+</head>
+<body>
+	<div class="container my-2">
+		<h1>Dades Sucursal</h1>
+        <hr>
+        <h2>Nova Sucursal</h2>
+		<form action="#" th:action="@{/sucursal/add}" th:object="${sucursalDto}" method="post">
+	    	<label for="nomSucursal">Nom</label>
+	    	<input type="text" th:field="*{nomSucursal}" id="nomSucursal" placeholder="Nom Sucursal">
+	    	<span th:if="${#fields.hasErrors('nomSucursal')}" th:errors="*{nomSucursal}"></span>
+	    	<label for="email">Pais</label>
+	    	<input type="text" th:field="*{paisSucursal}" id="paisSucursal" placeholder="Pais Sucursal">
+	    	<span th:if="${#fields.hasErrors('paisSucursal')}" th:errors="*{paisSucursal}"></span>
+	    	<input type="submit" value="Afegir sucursal">   
+		</form>
+	</div>
+</body>
+</html>

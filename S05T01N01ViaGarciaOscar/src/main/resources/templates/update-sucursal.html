@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+</head>
+<body>
+	<div class="container my-2">
+        <h1>Dades Sucursal</h1>
+        <hr>
+        <h2>Actualitzar Sucursal</h2>
+			<form action="#" th:action="@{/sucursal/update}"  th:object="${sucursalDto}"  method="POST">
+	  
+	    	<input type="hidden" th:field="*{pk_SucursalID}" id="pk_SucursalID" placeholder="pk_SucursalID">
+	    
+	    	<label for="nomSucursal">Nom</label>
+	    	<input type="text" th:field="*{nomSucursal}" id="nomSucursal" placeholder="Nom Sucursal" class="form-control mb-4 col-4">
+	    	<span th:if="${#fields.hasErrors('nomSucursal')}" th:errors="*{nomSucursal}"></span>
+	    
+	    	<label for="email">Pais</label>
+	    	<input type="text" th:field="*{paisSucursal}" id="paisSucursal" placeholder="Pais Sucursal" class="form-control mb-4 col-4">
+	    	<span th:if="${#fields.hasErrors('paisSucursal')}" th:errors="*{paisSucursal}"></span>
+	    
+	    	<input type="submit" value="Actualitzar Sucursal"> 
+	      
+	</form>
+	</div>
+</body>
+</html>
